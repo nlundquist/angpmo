@@ -83,11 +83,8 @@ const firstStatus = startWith<Status<any>>(
     }
 );
 const resp:Observable<ResponseData<Restaurant>> = of(sampleData);
-const restArr = resp.pipe(
-    mapToData,
-    mapToStatus,
-    firstStatus
-);
+const processing = pipe(mapToData, mapToStatus, firstStatus);
+const restArr = resp.pipe(processing);
 restArr.subscribe((v) => {
     if (v.value && v.value.length) {
         // note that .name works without error, Restaurant type is being inferred correctly
