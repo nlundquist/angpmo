@@ -1,0 +1,20 @@
+{
+  "name": "angpmo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "place-my-order-api --port 7070"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@angular/common": "^7.2.11",
+    "@types/node": "^11.12.1",
+    "place-my-order-api": "^1.0.1",
+    "rxjs": "^6.4.0",
+    "ts-node": "^8.0.3",
+    "typescript": "^3.4.1"
+  }
+}
