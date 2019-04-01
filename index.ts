@@ -1,6 +1,5 @@
-import { Observable, from, of, pipe } from "rxjs";
-import {map, startWith, mergeAll, filter, mapTo} from 'rxjs/operators';
-import {OperatorFunction} from "rxjs/internal/types";
+import { Observable, of, pipe } from "rxjs";
+import { map, startWith } from 'rxjs/operators';
 
 interface ResponseData<T> {
     data: T[]
@@ -15,21 +14,6 @@ interface Restaurant {
     _id: string,
     name: string,
     slug: string,
-//     address: {
-//         street: string,
-//         city: string,
-//         state: string,
-//         zip: string
-//     },
-//     images: {
-//         thumbnail: string,
-//         owner: string,
-//         banner: string,
-//     }
-//     menu: {
-//         lunch: Array<MenuItem>,
-//         dinner: Array<MenuItem>
-//     }
 }
 
 interface Status<T> {
@@ -49,12 +33,10 @@ function toStatus<T>(value: T) : Status<T> {
         isRejected: true
     };
 }
-const toStatusObject = map( toStatus );
 
 function gettingData<T>(obj: ResponseData<T>, index: number):Array<T>{
     return obj.data;
 }
-//const responseToStatus = pipe(mapToData, toStatusObject, startPending);
 
 const sampleData: ResponseData<Restaurant> = {
     data: [
